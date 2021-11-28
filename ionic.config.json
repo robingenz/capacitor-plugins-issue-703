@@ -1,0 +1,7 @@
+{
+  "name": "capacitor-plugins-issue-703",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "vue"
+}
