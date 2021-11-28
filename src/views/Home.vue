@@ -24,6 +24,7 @@
 <script lang="ts">
 import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar } from '@ionic/vue';
 import { defineComponent } from 'vue';
+import { App } from '@capacitor/app';
 
 export default defineComponent({
   name: 'Home',
@@ -33,6 +34,13 @@ export default defineComponent({
     IonPage,
     IonTitle,
     IonToolbar
+  },
+  setup() {
+    App.removeAllListeners().then(() => {
+      App.addListener('appStateChange', state => {
+          console.log(state); // Never called
+      });
+    })
   }
 });
 </script>
